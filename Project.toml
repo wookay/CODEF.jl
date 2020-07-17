@@ -1,0 +1,20 @@
+name = "CODEF"
+uuid = "56ffcbc5-3af5-4365-875b-7675b96d5833"
+authors = ["WooKyoung Noh <wookay.noh@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Jive = "ba5e3d4b-8524-549f-bc71-e76ad9e9deed"
+URIParser = "30578b45-9adc-5946-b283-645ec420af67"
+
+[targets]
+test = ["Test", "Jive", "URIParser"]
+
+[compat]
+julia = "1"
