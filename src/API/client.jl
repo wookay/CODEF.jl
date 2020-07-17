@@ -12,9 +12,7 @@ function http_post(url, headers, data)
         if err isa HTTP.ExceptionRequest.StatusError
             response = err.response
         else
-            @info :typeof typeof(err)
             @info :err err
-            err
         end
     end
     return response

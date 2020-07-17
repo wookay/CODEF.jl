@@ -34,7 +34,7 @@ response_codef_api = http_sender(CODEF_URL * account_list_path, token, body)
 if response_codef_api.status == 200
     println("정상처리")
 elseif response_codef_api.status == 401
-    dict = JSON.parse(IOBuffer(response_codef_api.body))
+    dict = (JSON.parse ∘ IOBuffer)(response_codef_api.body)
     # invalid_token
     println("error = ", dict["error"])
     # Cannot convert access token to JSON
@@ -43,7 +43,7 @@ elseif response_codef_api.status == 401
     # reissue token
     response_oauth = request_token(TOKEN_URL, SANDBOX_CLIENT_ID, SANDBOX_SECERET_KEY);
     if response_oauth.status == 200
-        dict = JSON.parse(IOBuffer(response_oauth.body))
+        dict = (JSON.parse ∘ IOBuffer)(response_oauth.body)
         # reissue_token
         token = dict["access_token"]
         println("access_token = ", token)
